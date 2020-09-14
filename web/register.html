@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+       background: url("img/register_bg.png") no-repeat center;
+    }
+    .rg_layout{
+
+
+        width: 1000px;
+        height: 600px;
+        background-color: white;
+        border: 8px #EEEEEE solid;
+        margin: auto;
+        margin-top: 50px;
+
+    }
+    .rg_layout_left{
+
+        width: 220px;
+        float: left;
+        padding: 10px;
+
+    }
+    .rg_layout_left > p:first-child{
+        color: yellow;
+        font-size: 20px;
+    }
+    .rg_layout_left>p:last-child{
+        color: #ffddb6;
+        font-size: 20px;
+    }
+    .rg_layout_center{
+
+        width: 450px;
+        height: 520px;
+        margin-left: 50px;
+        float: left;
+        margin-top: 50px;
+
+    }
+    .rg_layout_right{
+        width: 220px;
+        float: right;
+        padding: 10px;
+    }
+    .rg_layout_right > p{
+        font-size: 17px;
+        text-align: right;
+    }
+    .rg_layout_right p a{
+        color: pink;
+    }
+    .td_left{
+        width: 100px;
+        text-align: right;
+        height: 50px;
+        color:#ff55b6;
+
+    }
+    .td_right{
+        padding-left: 50px;
+    }
+    #username,#password,#name,#birthday,#checkcode,#email,#phone{
+        width: 200px;
+        height: 30px;
+        padding-left: 5px;
+        border-radius: 5px;
+        border: 1px solid #A6A6A6;
+    }
+    #sub{
+        background-color: pink;
+        border: 1px solid pink;
+        width: 200px;
+        height: 30px;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+<div class="rg_layout">
+    <div class="rg_layout_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+
+    </div>
+    <div class="rg_layout_center">
+        <div class="rg_form">
+            <form action="registerServlet" id="form" method="post" >
+            <table  >
+            <tr>
+                <td class="td_left">用户名</td>
+                <td class="td_right" ><input id="username" type="text"  name="username" placeholder="请输入用户名"></td>
+            </tr>
+            <tr>
+                <td class="td_left">密码</td>
+                <td class="td_right"><input id="password" type="password" name="password" placeholder="请输入密码"></td>
+            </tr>
+            <tr>
+                <td class="td_left">Email</td>
+                <td class="td_right"><input id="email" type="text" name="email" placeholder="请输入Email"></td>
+            </tr>
+            <tr>
+                <td class="td_left">姓名</td>
+                <td class="td_right"><input id="name" type="text" name="name" placeholder="请输入你的姓名"></td>
+            </tr>
+            <tr>
+                <td class="td_left">手机号</td>
+                <td class="td_right"><input  id="phone" type="text" name="phone"  placeholder="请输入手机号"></td>
+            </tr>
+            <tr>
+                <td class="td_left">性别</td>
+                <td class="td_right"><input id="gender" type="radio" name="gender" value="male">男<input type="radio" name="gender" value="female">女</td>
+            </tr>
+            <tr>
+                <td class="td_left">出生日期</td>
+                <td class="td_right"><input  id="birthday" type="date" name="birthday" placeholder="请输入您的出生日期"></td>
+            </tr>
+            <tr>
+                <td class="td_left">验证码</td>
+                <td class="td_right"><input id="checkcode" type="text"></td>
+            </tr>
+            <tr>
+                <td align="center"  colspan="2"> <input id="sub" type="submit" value="注册" ></td>
+            </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+    <div class="rg_layout_right">
+        <p>已有账号?<a href="login.html">立即登录</a></p>
+
+    </div>
+</div>
+<script>
+    document.getElementById("sub").onclick=function () {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username==""||password==""){
+            alert("账号或密码不能为空");
+            return false;
+        }
+    }
+</script>
+
+
+</body>
+</html>
